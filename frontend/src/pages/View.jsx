@@ -38,6 +38,10 @@ const TransactionsTable = () => {
       });
   }, []);
 
+  useEffect(() => {
+    console.log(transactions)
+  }, [transactions])
+
   async function onDelete(id) {
     try {
       setDelLoading(true);
