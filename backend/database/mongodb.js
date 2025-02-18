@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { DB_URI, NODE_ENV } from "../config/env.js";
+import { DB_URI } from "../config/env.js";
 
 if (!DB_URI) {
     throw new Error("Please define mongodb uri enviornment variable");
@@ -8,7 +8,7 @@ if (!DB_URI) {
 const connectToDatabase = async () => {
     try {
         await mongoose.connect(DB_URI);
-        console.log(`Connected to database ${NODE_ENV} mode!`);
+        console.log(`Connected to database!`);
     } catch (error) {
         console.error("Error connecting to db", error);
         // exit(1);
